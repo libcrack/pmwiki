@@ -1,12 +1,14 @@
-.PHONY: all clean
-.SILENT: all clean
+.PHONY: run help
+.SILENT: run help
 
+LPORT := 8081
+LHOST := 0.0.0.0
 PHP := $(shell which php)
-ARGS := -S 0.0.0.0:8282 -t .
+DOCROOT := .
 
 run:
-	$(PHP) $(ARGS)
+	$(PHP) -S $(LHOST):$(LPORT) -t $(DOCROOT)
 
 help:
-	echo "Usage: $0 start|stop|run"
+	echo "Usage: $0 help|run"
 
