@@ -6,26 +6,26 @@
 ##  to PmWiki.
 
 ##  $WikiTitle is the name that appears in the browser's title bar.
-$WikiTitle = 'Z&uuml;m Hosting';
+$WikiTitle = 'Libcrack Private Wiki';
 $PageLogoUrl="";
 $EnableMarkdown = 1;
 
 ##  $ScriptUrl is your preferred URL for accessing wiki pages
 ##  $PubDirUrl is the URL for the pub directory.
-# $ScriptUrl = 'http://www.mydomain.com/path/to/pmwiki.php';
-# $PubDirUrl = 'http://www.mydomain.com/path/to/pub';
+$ScriptUrl = 'http://watergate.mad.libcrack.so/pmwiki/pmwiki.php';
+$PubDirUrl = 'http://watergate.mad.libcrack.so/pmwiki/pub';
 
 ##  If you want to use URLs of the form .../pmwiki.php/Group/PageName
 ##  instead of .../pmwiki.php?p=Group.PageName, try setting
 ##  $EnablePathInfo below.  Note that this doesn't work in all environments,
-##  it depends on your webserver and PHP configuration.  You might also 
+##  it depends on your webserver and PHP configuration.  You might also
 ##  want to check http://www.pmwiki.org/wiki/Cookbook/CleanUrls more
 ##  details about this setting and other ways to create nicer-looking urls.
-# $EnablePathInfo = 1;
+$EnablePathInfo = 1;
 
 ## $PageLogoUrl is the URL for a logo image -- you can change this
 ## to your own logo if you wish.
-# $PageLogoUrl = "$PubDirUrl/skins/pmwiki/pmwiki-32.gif";
+$PageLogoUrl = "$PubDirUrl/skins/libcrack/crypto.jpg";
 
 ## If you want to have a custom skin, then set $Skin to the name
 ## of the directory (in pub/skins/) that contains your skin files.
@@ -33,14 +33,14 @@ $EnableMarkdown = 1;
 $Skin = 'equilibrium';
 
 ## You'll probably want to set an administrative password that you
-## can use to get into password-protected pages.  Also, by default 
+## can use to get into password-protected pages.  Also, by default
 ## the "attr" passwords for the PmWiki and Main groups are locked, so
 ## an admin password is a good way to unlock those.  See PmWiki.Passwords
 ## and PmWiki.PasswordsAdmin.
-$DefaultPasswords['admin'] = crypt('drummer42');
+$DefaultPasswords['admin'] = crypt('secret');
 
 ## Unicode (UTF-8) allows the display of all languages and all alphabets.
-# include_once("scripts/xlpage-utf-8.php");
+include_once("scripts/xlpage-utf-8.php");
 
 ## If you're running a publicly available site and allow anyone to
 ## edit without requiring a password, you probably want to put some
@@ -49,8 +49,8 @@ $DefaultPasswords['admin'] = crypt('drummer42');
 # $EnableBlocklist = 10;                   # enable automatic blocklists
 
 ##  PmWiki comes with graphical user interface buttons for editing;
-##  to enable these buttons, set $EnableGUIButtons to 1.  
-# $EnableGUIButtons = 1;
+##  to enable these buttons, set $EnableGUIButtons to 1.
+$EnableGUIButtons = 1;
 
 ##  To enable markup syntax from the Creole common wiki markup language
 ##  (http://www.wikicreole.org/), include it here:
@@ -61,18 +61,18 @@ $DefaultPasswords['admin'] = crypt('drummer42');
 ##  this.  Setting it to a higher number increases the number of
 ##  space characters required on a line to count as "preformatted text".
 # $EnableWSPre = 1;   # lines beginning with space are preformatted (default)
-# $EnableWSPre = 4;   # lines with 4 or more spaces are preformatted
+$EnableWSPre = 4;   # lines with 4 or more spaces are preformatted
 # $EnableWSPre = 0;   # disabled
 
 ##  If you want uploads enabled on your system, set $EnableUpload=1.
 ##  You'll also need to set a default upload password, or else set
 ##  passwords on individual groups and pages.  For more information
 ##  see PmWiki.UploadsAdmin.
-# $EnableUpload = 1;
-# $DefaultPasswords['upload'] = crypt('secret');
+$EnableUpload = 1;
+$DefaultPasswords['upload'] = crypt('secret');
 
 ##  Setting $EnableDiag turns on the ?action=diag and ?action=phpinfo
-##  actions, which often helps others to remotely troubleshoot 
+##  actions, which often helps others to remotely troubleshoot
 ##  various configuration and execution problems.
 # $EnableDiag = 1;                         # enable remote diagnostics
 
@@ -82,7 +82,7 @@ $DefaultPasswords['admin'] = crypt('drummer42');
 ##  adjusting configuration files or layout templates.
 # $EnableIMSCaching = 1;                   # allow browser caching
 
-##  Set $SpaceWikiWords if you want WikiWords to automatically 
+##  Set $SpaceWikiWords if you want WikiWords to automatically
 ##  have spaces before each sequence of capital letters.
 # $SpaceWikiWords = 1;                     # turn on WikiWord spacing
 
@@ -106,11 +106,11 @@ $DefaultPasswords['admin'] = crypt('drummer42');
 
 ##  The refcount.php script enables ?action=refcount, which helps to
 ##  find missing and orphaned pages.  See PmWiki.RefCount.
-# if ($action == 'refcount') include_once("scripts/refcount.php");
+if ($action == 'refcount') include_once("scripts/refcount.php");
 
 ##  The feeds.php script enables ?action=rss, ?action=atom, ?action=rdf,
 ##  and ?action=dc, for generation of syndication feeds in various formats.
-# if ($action == 'rss')  include_once("scripts/feeds.php");  # RSS 2.0
+if ($action == 'rss')  include_once("scripts/feeds.php");  # RSS 2.0
 # if ($action == 'atom') include_once("scripts/feeds.php");  # Atom 1.0
 # if ($action == 'dc')   include_once("scripts/feeds.php");  # Dublin Core
 # if ($action == 'rdf')  include_once("scripts/feeds.php");  # RSS 1.0
@@ -125,14 +125,14 @@ $DefaultPasswords['admin'] = crypt('drummer42');
 ##  automatically created whenever a link to a non-existent
 ##  category page is saved.  (The page is created only if
 ##  the author has edit permissions to the Category group.)
-# $AutoCreate['/^Category\\./'] = array('ctime' => $Now);
+$AutoCreate['/^Category\\./'] = array('ctime' => $Now);
 
 ##  PmWiki allows a great deal of flexibility for creating custom markup.
 ##  To add support for '*bold*' and '~italic~' markup (the single quotes
-##  are part of the markup), uncomment the following lines. 
+##  are part of the markup), uncomment the following lines.
 ##  (See PmWiki.CustomMarkup and the Cookbook for details and examples.)
 # Markup("'~", "inline", "/'~(.*?)~'/", "<i>$1</i>");        # '~italic~'
-# Markup("'*", "inline", "/'\\*(.*?)\\*'/", "<b>$1</b>");    # '*bold*'
+Markup("'*", "inline", "/'\\*(.*?)\\*'/", "<b>$1</b>");    # '*bold*'
 
 ##  If you want to have to approve links to external sites before they
 ##  are turned into links, uncomment the line below.  See PmWiki.UrlApprovals.
@@ -143,25 +143,25 @@ $DefaultPasswords['admin'] = crypt('drummer42');
 
 ##  The following lines make additional editing buttons appear in the
 ##  edit page for subheadings, lists, tables, etc.
-# $GUIButtons['h2'] = array(400, '\\n!! ', '\\n', '$[Heading]',
-#                     '$GUIButtonDirUrlFmt/h2.gif"$[Heading]"');
-# $GUIButtons['h3'] = array(402, '\\n!!! ', '\\n', '$[Subheading]',
-#                     '$GUIButtonDirUrlFmt/h3.gif"$[Subheading]"');
-# $GUIButtons['indent'] = array(500, '\\n->', '\\n', '$[Indented text]',
-#                     '$GUIButtonDirUrlFmt/indent.gif"$[Indented text]"');
-# $GUIButtons['outdent'] = array(510, '\\n-<', '\\n', '$[Hanging indent]',
-#                     '$GUIButtonDirUrlFmt/outdent.gif"$[Hanging indent]"');
-# $GUIButtons['ol'] = array(520, '\\n# ', '\\n', '$[Ordered list]',
-#                     '$GUIButtonDirUrlFmt/ol.gif"$[Ordered (numbered) list]"');
-# $GUIButtons['ul'] = array(530, '\\n* ', '\\n', '$[Unordered list]',
-#                     '$GUIButtonDirUrlFmt/ul.gif"$[Unordered (bullet) list]"');
-# $GUIButtons['hr'] = array(540, '\\n----\\n', '', '',
-#                     '$GUIButtonDirUrlFmt/hr.gif"$[Horizontal rule]"');
-# $GUIButtons['table'] = array(600,
-#                       '||border=1 width=80%\\n||!Hdr ||!Hdr ||!Hdr ||\\n||     ||     ||     ||\\n||     ||     ||     ||\\n', '', '', 
-#                     '$GUIButtonDirUrlFmt/table.gif"$[Table]"');
-// error_reporting(E_ALL);
-// ini_set('display_errors','ON');
+$GUIButtons['h2'] = array(400, '\\n!! ', '\\n', '$[Heading]',
+                    '$GUIButtonDirUrlFmt/h2.gif"$[Heading]"');
+$GUIButtons['h3'] = array(402, '\\n!!! ', '\\n', '$[Subheading]',
+                    '$GUIButtonDirUrlFmt/h3.gif"$[Subheading]"');
+$GUIButtons['indent'] = array(500, '\\n->', '\\n', '$[Indented text]',
+                    '$GUIButtonDirUrlFmt/indent.gif"$[Indented text]"');
+$GUIButtons['outdent'] = array(510, '\\n-<', '\\n', '$[Hanging indent]',
+                    '$GUIButtonDirUrlFmt/outdent.gif"$[Hanging indent]"');
+$GUIButtons['ol'] = array(520, '\\n# ', '\\n', '$[Ordered list]',
+                    '$GUIButtonDirUrlFmt/ol.gif"$[Ordered (numbered) list]"');
+$GUIButtons['ul'] = array(530, '\\n* ', '\\n', '$[Unordered list]',
+                    '$GUIButtonDirUrlFmt/ul.gif"$[Unordered (bullet) list]"');
+$GUIButtons['hr'] = array(540, '\\n----\\n', '', '',
+                    '$GUIButtonDirUrlFmt/hr.gif"$[Horizontal rule]"');
+$GUIButtons['table'] = array(600,
+                      '||border=1 width=80%\\n||!Hdr ||!Hdr ||!Hdr ||\\n||     ||     ||     ||\\n||     ||     ||     ||\\n', '', '',
+                    '$GUIButtonDirUrlFmt/table.gif"$[Table]"');
+ error_reporting(E_ALL);
+ini_set('display_errors','ON');
 
 include_once("$FarmD/cookbook/markdownpmw.php");
 
