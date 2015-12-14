@@ -1,5 +1,5 @@
 .PHONY: run help
-.SILENT: run help
+.SILENT: help
 
 LPORT := 8081
 LHOST := 0.0.0.0
