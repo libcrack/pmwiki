@@ -12,8 +12,8 @@ $EnableMarkdown = 1;
 
 ##  $ScriptUrl is your preferred URL for accessing wiki pages
 ##  $PubDirUrl is the URL for the pub directory.
-$ScriptUrl = 'http://watergate.mad.libcrack.so/pmwiki/pmwiki.php';
-$PubDirUrl = 'http://watergate.mad.libcrack.so/pmwiki/pub';
+$ScriptUrl = 'http://watergate.mad.libcrack.so/pmwiki.php';
+$PubDirUrl = 'http://watergate.mad.libcrack.so/pub';
 
 ##  If you want to use URLs of the form .../pmwiki.php/Group/PageName
 ##  instead of .../pmwiki.php?p=Group.PageName, try setting
@@ -132,7 +132,7 @@ $AutoCreate['/^Category\\./'] = array('ctime' => $Now);
 ##  are part of the markup), uncomment the following lines.
 ##  (See PmWiki.CustomMarkup and the Cookbook for details and examples.)
 # Markup("'~", "inline", "/'~(.*?)~'/", "<i>$1</i>");        # '~italic~'
-Markup("'*", "inline", "/'\\*(.*?)\\*'/", "<b>$1</b>");    # '*bold*'
+# Markup("'*", "inline", "/'\\*(.*?)\\*'/", "<b>$1</b>");    # '*bold*'
 
 ##  If you want to have to approve links to external sites before they
 ##  are turned into links, uncomment the line below.  See PmWiki.UrlApprovals.
